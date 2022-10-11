@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}My shop{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
+        <!-- JavaScript Bundle with Popper -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+        
+
+
+    </head>
+        
+    <body>
+        
+              
+             
+            
+            
+            <nav class="navbar-flex navbar-expand-md navbar-light bg-dark mt-2 mt-md-0 ms-md-auto">
+                
+                <div class="container-fluid">
+                    <div class="col-sm-8 col-md-7 py-4">
+
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                                    <span class="fs-4 text-white text-decoration-none">Chunches co.</span>""""
+                                    <a class="me-3 py-2 text-white text-decoration-none" href="/">Home</a>
+                                    <a class="me-3 py-2 text-white text-decoration-none" href="#">Enterprise</a>
+                                    <a class="me-3 py-2 text-white text-decoration-none" href="#">Support</a>
+                                    
+                                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item " href="{% url "store:product_all" %}">Todos</a></li>
+                                                    {% for c in categories %}
+                                                    <li {% if category.slug == c.slug %}class="selected" {% endif %}>
+                                                      <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
+                                                    </li>
+                                                    {% endfor %}
+                                     </ul>
+                                                
+
+                        </ul>
+
+                        
+                   </div>
+                </div>
+            </nav>
+            <div id="content"> {% block content %} {% endblock %} </div>
+      
+          
+        
+
+    </body>
+ 
+
+</html>

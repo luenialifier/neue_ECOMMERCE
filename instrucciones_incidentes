@@ -1,0 +1,61 @@
+
+django-admin startproject core .  >>>>>>>>>>>>>>>> para comenzar la lógica del proyecto dentro de Django
+
+python manage.py startapp store  >>>>>>>>>>>>>>>>> para iniciar o crear un modulo de la aplicación
+
+python manage.py makemigrations  >>>>>>>>>>>>>>>>> para cargar las migraciones que están contenidas en el models.py(el esquema que formará las tablas)
+
+python manage.py migrate  >>>>>>>>>>>>>>>>>>>>>>> para integrar las migraciones cargadas 
+
+
+primeramente al crearse el proyecto en Django se crea el modelo deacuerdo a lo que requiera la funcionalidad propuesta del aplicativo,
+a la vez que se ajusta ewn el archivo settings.py las primeras rutas generales hacia los recursdos a emplear como lo son
+las imágenes.
+
+Después se procede a notoficar o implementar las rutas de navegación interna de la aplicativo webb en el url.py del módulo creado y a ocupar.
+
+
+este es el último models.py -------------------------------------------------------------------------
+
+
+from django.db import models
+from django.conf import settings
+from django.urls import reverse
+
+# Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=255, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name_plural = 'categories'
+
+    def get_absolute_url(self):
+        return reverse("store:category_list", args=[self.slug])
+
+    def __str__(self):
+        return self.name
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
+    maker_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='product_creator')
+    articulo = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to='images/', default='images/default.png' )
+    slug = models.SlugField(max_length=255)
+    price = models.DecimalField(max_digits=4,decimal_places=2)
+    in_stock = models.BooleanField(default=True)
+    is_store = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Products'
+        ordering = ('-created' ,)
+
+    def __str__(self):
+        return self.title
+
+
+
+

@@ -1,0 +1,340 @@
+
+---------------------------------------------------------------------24-09-2022--------------------------------------------------------------------
+BASH
+
+source /home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/activate
+[luixel@localhost neue_ECOMMERCE]$ source /home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/activate
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py test
+Found 0 test(s).
+System check identified no issues (0 silenced).
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+(venv) [luixel@localhost neue_ECOMMERCE]$ pip install coverage
+Collecting coverage
+  Downloading coverage-6.4.4-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (212 kB)
+     |████████████████████████████████| 212 kB 1.5 MB/s 
+Installing collected packages: coverage
+Successfully installed coverage-6.4.4
+WARNING: You are using pip version 20.2.2; however, version 22.2.2 is available.
+You should consider upgrading via the '/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/python -m pip install --upgrade pip' command.
+(venv) [luixel@localhost neue_ECOMMERCE]$ python -m pip install --upgrade pip
+Collecting pip
+  Downloading pip-22.2.2-py3-none-any.whl (2.0 MB)
+     |████████████████████████████████| 2.0 MB 1.6 MB/s 
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.2.2
+    Uninstalling pip-20.2.2:
+      Successfully uninstalled pip-20.2.2
+Successfully installed pip-22.2.2
+(venv) [luixel@localhost neue_ECOMMERCE]$ coverage run manage.py test
+Found 0 test(s).
+System check identified no issues (0 silenced).
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+(venv) [luixel@localhost neue_ECOMMERCE]$ coverage report
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+core/__init__.py                   0      0   100%
+core/settings.py                  21      0   100%
+core/urls.py                       7      1    86%
+manage.py                         12      2    83%
+store/__init__.py                  0      0   100%
+store/admin.py                    12      0   100%
+store/apps.py                      4      0   100%
+store/migrations/__init__.py       0      0   100%
+store/models.py                   27      2    93%
+store/tests.py                     1      0   100%
+--------------------------------------------------
+TOTAL                             84      5    94%
+(venv) [luixel@localhost neue_ECOMMERCE]$ 
+
+
+
+python >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+[luixel@localhost neue_ECOMMERCE]$ source venv/bin/activate
+(venv) [luixel@localhost neue_ECOMMERCE]$ django-admin startproject core .
+(venv) [luixel@localhost neue_ECOMMERCE]$ deactivate
+[luixel@localhost neue_ECOMMERCE]$ 
+ *  History restored 
+
+[luixel@localhost neue_ECOMMERCE]$ source venv/bin/activate
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py startapp store
+(venv) [luixel@localhost neue_ECOMMERCE]$ python -m pip install Pillow
+Collecting Pillow
+  Downloading Pillow-9.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+     |████████████████████████████████| 3.1 MB 5.2 MB/s 
+Installing collected packages: Pillow
+Successfully installed Pillow-9.2.0
+WARNING: You are using pip version 20.2.2; however, version 22.2.2 is available.
+You should consider upgrading via the '/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/python -m pip install --upgrade pip' command.
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 22, in <module>
+    main()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 420, in execute
+    django.setup()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/models.py", line 5, in <module>
+    class Category(models.Model):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/models.py", line 6, in Category
+    name = models.CharField(max_lenght=255, db_index=True)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/db/models/fields/__init__.py", line 1121, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'max_lenght'
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py makemigrations
+Migrations for 'store':
+  store/migrations/0001_initial.py
+    - Create model Category
+    - Create model Product
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, store
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying store.0001_initial... OK
+(venv) [luixel@localhost neue_ECOMMERCE]$ deactivate
+[luixel@localhost neue_ECOMMERCE]$ 
+ *  History restored 
+
+source /home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/activate
+[luixel@localhost neue_ECOMMERCE]$ source /home/luixel/Documentos/Python/neue_ECOMMERCE/venv/bin/activate
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py createsuperuser
+Traceback (most recent call last):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 22, in <module>
+    main()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 420, in execute
+    django.setup()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/apps/registry.py", line 124, in populate
+    app_config.ready()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/contrib/admin/apps.py", line 27, in ready
+    self.module.autodiscover()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/contrib/admin/__init__.py", line 50, in autodiscover
+    autodiscover_modules("admin", register_to=site)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/utils/module_loading.py", line 58, in autodiscover_modules
+    import_module("%s.%s" % (app_config.name, module_to_search))
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/admin.py", line 7, in <module>
+    class CategoryAdmin(admin.ModelAdmin):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/admin.py", line 8, in CategoryAdmin
+    list_display = _['name', 'slug']
+NameError: name '_' is not defined
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py createsuperuser
+Traceback (most recent call last):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 22, in <module>
+    main()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/__init__.py", line 420, in execute
+    django.setup()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/apps/registry.py", line 124, in populate
+    app_config.ready()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/contrib/admin/apps.py", line 27, in ready
+    self.module.autodiscover()
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/contrib/admin/__init__.py", line 50, in autodiscover
+    autodiscover_modules("admin", register_to=site)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/utils/module_loading.py", line 58, in autodiscover_modules
+    import_module("%s.%s" % (app_config.name, module_to_search))
+  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/admin.py", line 7, in <module>
+    class CategoryAdmin(admin.ModelAdmin):
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/store/admin.py", line 8, in CategoryAdmin
+    list_display = _['name', 'slug']
+NameError: name '_' is not defined
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py createsuperuser
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'store.admin.ProductAdmin'>: (admin.E026) The value of 'prepopulated_fields' must be a dictionary.
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py createsuperuser
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+<class 'store.admin.ProductAdmin'>: (admin.E030) The value of 'prepopulated_fields["slug"][0]' refers to 'title', which is not a field of 'store.Product'.
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py createsuperuser
+Username (leave blank to use 'luixel'): adminitodo
+Email address: 
+Password: 
+Password (again): 
+Superuser created successfully.
+(venv) [luixel@localhost neue_ECOMMERCE]$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 25, 2022 - 15:40:03
+Django version 4.1.1, using settings 'core.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Not Found: /
+[25/Sep/2022 15:40:18] "GET / HTTP/1.1" 404 2183
+Not Found: /favicon.ico
+[25/Sep/2022 15:40:25] "GET /admin/ HTTP/1.1" 302 0
+[25/Sep/2022 15:40:25] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218
+[25/Sep/2022 15:40:25] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 796
+[25/Sep/2022 15:40:25] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[25/Sep/2022 15:40:25] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[25/Sep/2022 15:40:50] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[25/Sep/2022 15:40:50] "GET /admin/ HTTP/1.1" 200 4658
+[25/Sep/2022 15:40:50] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[25/Sep/2022 15:40:50] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[25/Sep/2022 15:40:57] "GET /admin/store/category/ HTTP/1.1" 200 5693
+[25/Sep/2022 15:40:57] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:40:57] "GET /static/admin/js/filters.js HTTP/1.1" 200 966
+[25/Sep/2022 15:40:57] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+Not Found: /favicon.ico
+[25/Sep/2022 15:40:59] "GET /admin/store/product/ HTTP/1.1" 200 6826
+[25/Sep/2022 15:40:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:40:59] "GET /static/admin/css/forms.css HTTP/1.1" 200 8944
+[25/Sep/2022 15:40:59] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+[25/Sep/2022 15:49:53] "GET /admin/store/category/ HTTP/1.1" 200 5693
+[25/Sep/2022 15:49:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:49:58] "GET /admin/store/category/ HTTP/1.1" 200 5693
+[25/Sep/2022 15:49:58] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:50:03] "GET /admin/auth/user/ HTTP/1.1" 200 9262
+[25/Sep/2022 15:50:03] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:50:03] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[25/Sep/2022 15:50:03] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[25/Sep/2022 15:50:04] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[25/Sep/2022 15:50:24] "GET /admin/store/category/add/ HTTP/1.1" 200 7021
+[25/Sep/2022 15:50:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:50:24] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[25/Sep/2022 15:50:24] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+Not Found: /favicon.ico
+[25/Sep/2022 15:50:56] "POST /admin/store/category/add/ HTTP/1.1" 302 0
+[25/Sep/2022 15:50:56] "GET /admin/store/category/ HTTP/1.1" 200 7267
+[25/Sep/2022 15:50:56] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:50:58] "GET /admin/store/product/ HTTP/1.1" 200 6826
+[25/Sep/2022 15:50:58] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:51:01] "GET /admin/store/product/add/ HTTP/1.1" 200 12773
+[25/Sep/2022 15:51:01] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:51:01] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[25/Sep/2022 15:51:59] "POST /admin/store/product/add/ HTTP/1.1" 200 13018
+[25/Sep/2022 15:51:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[25/Sep/2022 15:52:18] "POST /admin/store/product/add/ HTTP/1.1" 200 12966
+[25/Sep/2022 15:52:18] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:52:28] "POST /admin/store/product/add/ HTTP/1.1" 302 0
+[25/Sep/2022 15:52:28] "GET /admin/store/product/ HTTP/1.1" 200 9933
+[25/Sep/2022 15:52:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+[25/Sep/2022 15:52:37] "POST /admin/store/product/ HTTP/1.1" 302 0
+[25/Sep/2022 15:52:37] "GET /admin/store/product/ HTTP/1.1" 200 9734
+[25/Sep/2022 15:52:37] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+Not Found: /favicon.ico
+
+----------------------------------------------------------27/09/22-----------------------------------------------------------
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/usr/lib64/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/core/management/base.py", line 546, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+?: (urls.E004) Your URL pattern "path('', include('store.urls', namespace='store'))," is invalid. Ensure that urlpatterns is a list of path() and/or re_path() instances.
+        HINT: Try removing the string 'path('', include('store.urls', namespace='store')),'. The list of urlpatterns should not have a prefix string as the first element.
+        
+        
+        File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/core/urls.py", line 23, in <module>
+    path('', include('store.urls', namespace='store')),
+  File "/home/luixel/Documentos/Python/neue_ECOMMERCE/venv/lib64/python3.9/site-packages/django/urls/conf.py", line 42, in include
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Specifying a namespace in include() without providing an app_name is not supported. Set the app_name attribute in the included module, or pass a 2-tuple containing the list of patterns and app_name instead
+
+
+
+**************Se solucionó en el archivo urls.py core********************************
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('store.urls', namespace='store')),>>>>>>>>>>>>>> path('stote/', include('store.urls', namespace='store')),y luego se borró:path('', include('store.urls', namespace='store')),
+    
+    se editó también el archivo base.htmlp
+]
